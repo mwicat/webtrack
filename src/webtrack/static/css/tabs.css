@@ -1,0 +1,50 @@
+#navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 1em 0.5em;
+}
+
+
+#navigation ul * {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#navigation li {
+	float: left;
+	border: 1px solid #bbb;
+	border-bottom-width: 0;
+	margin: 0;
+}
+#navigation a {
+	text-decoration: none;
+	display: block;
+	background: #eee;
+	padding: 0.24em 1em;
+	color: #00c;
+	width: 8em;
+	text-align: center;
+}
+#navigation a:hover {
+	background: #ddf;
+}
+#navigation #selected {
+	border-color: #bbb;
+}
+#navigation #selected a {
+	position: relative;
+	top: 1px;
+	background: white;
+	color: black;
+	font-weight: bold;
+}
+#content {
+	border: 1px solid #bbb;
+	clear: both;
+	padding: 1em;
+	margin: 0.5em;
+}
+h1 {
+	margin: 0;
+	padding: 0 0 1em 0;
+}

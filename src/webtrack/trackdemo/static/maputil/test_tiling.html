@@ -1,0 +1,14 @@
+<script src="tiling.js"></script>
+<script>
+var width = 240;
+var height = 320;
+var zoom = 12;
+var lat = 0;
+var lng = 0;
+
+var tileEngine = new TileEngine(width, height, zoom);
+var tile = tileEngine.getTileFor(lat, lng);
+
+alert(JSON.stringify(tile));
+
+</script>

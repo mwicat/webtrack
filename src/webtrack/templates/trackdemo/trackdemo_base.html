@@ -1,0 +1,21 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+{% load tabs %}
+
+{% block subtitle %}Trackdemo{% endblock %}
+
+
+
+{% block nav-global %}
+
+{% url index as index_url %}
+{% url tracker_list as trackers_url %}
+
+<ul>
+	<li {% active_tab request.path index_url %}><a href="{{ index_url}}">Symulacja</a></li>
+	<li {% active_tab request.path trackers_url %}><a href="{{ trackers_url }}">Trackery</a></li>
+
+</ul>
+{% endblock %}
+
+

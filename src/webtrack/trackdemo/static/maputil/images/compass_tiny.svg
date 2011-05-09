@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Tiny//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd">
+<svg
+        width="40" height="40" viewBox="0 0 40 40"
+        >
+    <rect x="0" y="0" width="40" height="40" fill="white" fill-opacity="0.5" />
+    <g transform="translate(20, 17) scale(1.5)" id="strzalka">
+    <g id="strzalka_rot" transform="rotate(0)" fill="#1e665b" fill-opacity="0.5">
+    <rect id="_4" x="-3" y="-3" width="6" height="7" />
+    <path d="M -7 -3 L 7 -3 L 0 -9 z" />
+    </g>
+    </g>
+    <text text-anchor="middle" font-size="8" id="distance" x="20" y="39" font-family="Verdana" ></text>
+</svg>

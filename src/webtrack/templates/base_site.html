@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% block subtitle %}Site{% endblock %} | {% trans 'Webtrack' %}{% endblock %}
+
+{% block branding %}
+<a href="/"><img style="margin: 0.5em 0em 0.5em 2em;" src="{{ STATIC_URL }}images/webtrack.png" title="{% trans 'Webtrack' %}"></img></a>
+{% endblock %}

@@ -1,0 +1,159 @@
+/**
+ * Mapsicle Styles
+ */
+
+body {
+    /* Mapsicle hacks so labels show up over flash */
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+}
+
+/**
+ * Get rid of the hourglass in Internet Explorer
+ */
+div.mapsicle-panel {
+    cursor: default;
+}
+
+div.mapsicle-overlays {
+    cursor: pointer;
+}
+
+/*
+ * =============
+ * Mapsicle Core
+ * =============
+ */
+
+div.mapsicle-streetview {
+    height: 100%;
+    width: 100%;
+}
+
+div.mapsicle-panel {
+    position: relative;
+    overflow: hidden;
+    z-index: 40;
+}
+
+div.mapsicle-labels {
+    z-index: 80;
+}
+
+div.mapsicle-overlays {
+    z-index: 90;
+    position: absolute;
+    overflow: hidden;}
+
+
+/*
+ * =============
+ * Label Styling
+ * =============
+ */
+
+/** markers **/
+
+.mapsicle-svmarker-left-side, .mapsicle-svmarker-right-side {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 0;
+    top: 0;
+}
+
+.mapsicle-svmarker-left-side {
+    left: 0;
+}
+
+.mapsicle-svmarker-right-side {
+    right: 0;
+}
+
+/** shared **/
+
+.clear {
+    clear: both;
+}
+
+.mapsicle-svinfowindow {
+    font-family: arial, sans-serif;
+    height: 30px;
+}
+
+.mapsicle-svinfowindow h2 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.mapsicle-svinfowindow .left, .mapsicle-svinfowindow .right {
+    width: 6px;
+    height: 30px;
+}
+
+.mapsicle-svinfowindow .middle {
+    background: #ffffff;
+    float: left;
+    height: 26px;
+    padding: 0px 2px 0px 2px;
+}
+
+/** Blue-specific **/
+
+.mapsicle-svinfowindow_blue a {
+    color: #0083d7;
+    text-decoration: none;
+}
+
+.mapsicle-svinfowindow_blue h2 {
+    color: #0083d7;
+}
+
+.mapsicle-svinfowindow_blue .left {
+    background: url(images/sides_blue.png) top left;
+    float: left;
+}
+
+.mapsicle-svinfowindow_blue .right {
+    background: url(images/sides_blue.png) top right;
+    float: left;
+}
+
+.mapsicle-svinfowindow_blue .middle {
+    border-top: 2px solid #0083d7;
+    border-bottom: 2px solid #0083d7;
+}
+
+/** Black-specific **/
+
+.mapsicle-svinfowindow_black a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.mapsicle-svinfowindow_black h2 {
+    color: #000000;
+}
+
+.mapsicle-svinfowindow_black .left {
+    background-image: url(images/sides_black.png);
+    background-position: top left;
+    float: left;
+}
+
+.mapsicle-svinfowindow_black .right {
+    background-image: url(images/sides_black.png);
+    background-position: top right;
+    float: left;
+}
+
+.mapsicle-svinfowindow_black .middle {
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}

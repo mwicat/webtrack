@@ -1,0 +1,67 @@
+{% extends "trackdemo/trackdemo_base.html" %}
+{% load i18n %}
+
+{% block subtitle %}Simulation{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block bodyclass %}change-list{% endblock %}
+
+{% block content_title %}{% endblock %}
+
+{% if not is_popup %}
+  {% block breadcrumbs %}
+    <div class="breadcrumbs">
+       <a href="../">
+        {% trans "Home" %}
+      </a>
+      &rsaquo;
+      Simulation
+    </div>
+  {% endblock %}
+{% endif %}
+
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/map.css" />
+<link
+	href="http://code.google.com/apis/maps/documentation/javascript/examples/standard.css"
+	rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block extrahead %}
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+<script type="text/javascript"
+	src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/markerwithlabel.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/map.js"></script>
+<script type="text/javascript">
+trackers_data = {{ serialized_trackers|safe }};
+
+tracker_update_urls = {
+{% for trk in object_list %}
+	{{ trk.id }}: '{% url update_tracker trk.id %}',
+{% endfor %}
+};
+
+window.onload = initialize_map;
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="map_canvas" class="column"></div>
+<div id="microemu" class="column">
+	<applet code="org.microemu.applet.Main"
+	        width="292" height="618"
+	        archive="{{ STATIC_URL }}applet/microemu-javase-applet.jar,{{ STATIC_URL }}applet/microemu-jsr-135.jar,{{ STATIC_URL }}applet/microemu-device-large.jar,{{ STATIC_URL }}applet/mxtrack.jar">
+        <param name="midlet" value="com.mwicat.mxtrack.core.TrackerMidlet"/>
+    <param name="jad" value="{{ STATIC_URL }}applet/test.jad"></param>
+    <param name="device" value="org/microemu/device/large/device.xml"></param>
+
+    </applet>
+</div>
+<div style="clear: both"></div>
+{% endblock %}
