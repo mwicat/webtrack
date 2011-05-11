@@ -1,5 +1,5 @@
 *.class
 *.pyc
 *.pyo
-**/sqlite.db
-**/settings_private.py
+sqlite.db
+settings_private.py
