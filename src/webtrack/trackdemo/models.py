@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 from trackdemo.notification import *
 from django.db.models.signals import post_save
-import tracker_pb2
+from api import tracker_pb2
 
 class TrackerType(models.Model):
     name = models.CharField(max_length=64)
