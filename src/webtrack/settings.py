@@ -2,6 +2,8 @@
 
 import os
 
+from settings_private import DATABASES, SECRET_KEY
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -10,17 +12,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'C:\\workspaces\\aptana\\webtrack\\src\\sqlite.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -58,10 +49,6 @@ MEDIA_URL = ''
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
-
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '@(r8ywswamjya6h+w2^1m25^!u4ydi@ck)aax3pi+ff2w%=y6z'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
