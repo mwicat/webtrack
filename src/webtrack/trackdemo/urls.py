@@ -9,6 +9,7 @@ urlpatterns = patterns('trackdemo.views',
         login_required(direct_to_template), 
         dict(template='trackdemo/profile.html', extra_context=dict(title='Profil'))),
         
+    url(r'^simulation.jad/$', 'simulation_jad', name='simulation_jad'),
     url(r'^tracker/$', 'tracker_list', name='tracker_list'),
     url(r'^tracker/(?P<pk>\d+)/$', 'tracker_detail', name='tracker_detail'),
     url(r'^tracker/(?P<pk>\d+)/update/$', 'update_tracker', name='update_tracker'),

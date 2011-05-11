@@ -1,2 +1,2 @@
-Init-Url: http://localhost:8000/api/tracker/protobuf/
-Server-Addr: localhost:61613
+Init-Url: http://89.77.59.210:8000/api/tracker/protobuf/
+Server-Addr: 89.77.59.210:61613

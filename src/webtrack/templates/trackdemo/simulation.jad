@@ -1,0 +1,2 @@
+Init-Url: http://{{ host }}:8000/api/tracker/protobuf/
+Server-Addr: {{ host }}:61613

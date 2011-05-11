@@ -58,7 +58,7 @@ window.onload = initialize_map;
 	        width="292" height="618"
 	        archive="{{ STATIC_URL }}applet/microemu-javase-applet.jar,{{ STATIC_URL }}applet/microemu-jsr-135.jar,{{ STATIC_URL }}applet/microemu-device-large.jar,{{ STATIC_URL }}applet/mxtrack.jar">
         <param name="midlet" value="com.mwicat.mxtrack.core.TrackerMidlet"/>
-    <param name="jad" value="{{ STATIC_URL }}applet/test.jad"></param>
+    <param name="jad" value="{% url simulation_jad %}"></param>
     <param name="device" value="org/microemu/device/large/device.xml"></param>
 
     </applet>

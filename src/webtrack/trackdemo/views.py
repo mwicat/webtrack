@@ -9,6 +9,8 @@ from trackdemo.forms import TrackerForm
 import json
 from misc.util import serialize
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
 
 class ShowMapView(OwnedListView):
     
@@ -21,6 +23,13 @@ class ShowMapView(OwnedListView):
         serialized = json.dumps(serialize(object_list))
         context['serialized_trackers'] = serialized
         return context
+
+def simulation_jad(request):
+    http_host = request.META['HTTP_HOST']
+    host = http_host.split(':')[0]
+    return render_to_response('trackdemo/simulation.jad',
+                              dict(host=host),
+                              context_instance=RequestContext(request))
 
 
 create_tracker = login_required(OwnedCreateView.as_view(owner='owner',
