@@ -2,19 +2,19 @@ from django.conf.urls.defaults import url, patterns, include
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from guardian.admin import GuardedModelAdmin
 
 from django.views.generic.simple import redirect_to
 
 from django.contrib import databrowse
 from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.admin.options import ModelAdmin
 
 for app in models.get_apps():
     model_list = models.get_models(app)
     for model in model_list:
         databrowse.site.register(model)
-        admin.site.register(model, GuardedModelAdmin)
+        admin.site.register(model, ModelAdmin)
 
 
 from django.contrib import databrowse
