@@ -102,7 +102,6 @@ DEBUG_TOOLBAR_CONFIG = dict(INTERCEPT_REDIRECTS=False)
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend', # this is default
-    'guardian.backends.ObjectPermissionBackend',
 )
 
 ANONYMOUS_USER_ID = -1
@@ -122,6 +121,7 @@ INSTALLED_APPS = (
     'captcha',
     'trackdemo',
     'misc',
+    'api',
     
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
@@ -130,7 +130,8 @@ INSTALLED_APPS = (
 )
 
 FIXTURE_DIRS = (
-   os.path.join(os.path.dirname(__file__), "trackdemo"),
+   os.path.join(os.path.dirname(__file__), "auth", "fixtures"),
+   os.path.join(os.path.dirname(__file__), "trackdemo", "fixtures"),
 )
 
 
