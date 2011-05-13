@@ -1,7 +1,7 @@
 # Create your views here.
 
 from trackdemo.models import Tracker
-from helpers import OwnedUpdateView, OwnedListView, OwnedCreateView, OwnedDeleteView, OwnedDetailView
+from misc.helpers import OwnedUpdateView, OwnedListView, OwnedCreateView, OwnedDeleteView, OwnedDetailView
 from django.contrib.auth.decorators import login_required
 from trackdemo.forms import TrackerForm
 

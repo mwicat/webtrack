@@ -10,4 +10,3 @@ class TrackerForm(forms.ModelForm):
     class Meta:
         model = Tracker
         exclude = ('owner')
-        

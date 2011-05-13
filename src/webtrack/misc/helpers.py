@@ -11,6 +11,11 @@ from django.core import exceptions
 from django.core.exceptions import ImproperlyConfigured
 from django.http import Http404, HttpResponseRedirect
 
+def pre_fill_form(form):
+    for field in form.fields:
+        if field not in form.data:
+            form.data[field] = form.initial.get(field)
+
 
 class GuardedDetailView(DetailView):
     def get(self, request, **kwargs):
