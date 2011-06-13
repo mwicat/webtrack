@@ -1,5 +1,19 @@
-#!/usr/bin/python
+#!/home/mwicat/python
 import os, sys
+
+from pysrc import pydevd
+
+import site
+
+
+#localsite = os.path.expanduser('~mwicat/.local/lib/python2.6/site-packages')
+#os.listdir(localsite)
+#if localsite in sys.path: sys.path.remove(localsite)
+#pydevd.settrace('bh.mwicat.com')
+#site.addsitedir(localsite)
+
+
+print >> sys.stderr, 'sys.path', sys.path
 
 _PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _PROJECT_DIR)
