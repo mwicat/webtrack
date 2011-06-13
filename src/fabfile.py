@@ -1,13 +1,15 @@
+from fabric.api import *
+
 REPOS = (("my_project", "origin", "master"),
         ("my_app", "origin", "master"))
 
 def production():
-    config.fab_hosts = ['a.example.com']
-    config.repos = REPOS
+    env.fab_hosts = ['a.example.com']
+    env.repos = REPOS
 
 def staging():
-    config.fab_hosts = ['a.staging_example.com']
-    config.repos = REPOS
+    env.fab_hosts = ['a.staging_example.com']
+    env.repos = REPOS
 
 def git_pull():
     "Updates the repository."
@@ -23,10 +25,10 @@ def reboot():
 
 def pull():
     require('fab_hosts', provided_by=[production])
-    for repo, parent, branch in config.repos:
-        config.repo = repo
-        config.parent = parent
-        config.branch = branch
+    for repo, parent, branch in env.repos:
+        env.repo = repo
+        env.parent = parent
+        env.branch = branch
         invoke(git_pull)
 
 def test():
@@ -39,6 +41,6 @@ def reset(repo, hash):
         fab reset:repo=my_repo,hash=etcetc123
     """
     require("fab_hosts", provided_by=[production])
-    config.hash = hash
-    config.repo = repo
+    env.hash = hash
+    env.repo = repo
     invoke(git_reset)
