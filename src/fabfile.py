@@ -29,7 +29,7 @@ def pull():
         env.repo = repo
         env.parent = parent
         env.branch = branch
-        invoke(git_pull)
+        git_pull()
 
 def test():
     local("python manage.py test", fail='abort')
@@ -43,4 +43,4 @@ def reset(repo, hash):
     require("fab_hosts", provided_by=[production])
     env.hash = hash
     env.repo = repo
-    invoke(git_reset)
+    git_reset()
